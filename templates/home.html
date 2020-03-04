@@ -1,6 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 <div style="margin:auto;">
   <h1>Home Page</h1>
+  {% if user.is_authenticated %}
+  <div>
+    <p>Hi {{ user.username }}</p>
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+  </div>
+  {% else %}
+  <div>
+    <p>You aren't logged in log in <a href="{% url 'login' %}">Log In</a></p>
+    <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
+  </div>
+  {% endif %}
 </div>
 
 {% endblock %}
