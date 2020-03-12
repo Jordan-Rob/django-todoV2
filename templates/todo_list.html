@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<div style="margin: auto;">
+  <h1>Todos</h1>
+  {% for todo in object_list %}
+  <div>
+    <ul>
+      <li><a href="{% url 'todo_detail' todo.pk %}">{{ todo.title }}</a></li>
+    </ul>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
