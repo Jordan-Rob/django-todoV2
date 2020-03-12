@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.exceptions import PermissionDenied
 from django.views.generic import (
     CreateView,
     ListView,
@@ -17,6 +18,10 @@ class TodoCreateView(CreateView):
     model = Todo
     fields = ('title', 'description', 'to_be_done')
     template_name = 'todo_new.html'
+
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
 
 
 class TodoListView(ListView):
