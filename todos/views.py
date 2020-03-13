@@ -9,7 +9,7 @@ from django.views.generic import (
     DeleteView
 )
 
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .models import Todo
 
 # Create your views here.
