@@ -31,6 +31,13 @@ class TodoListView(LoginRequiredMixin, ListView):
     template_name = 'todo_list.html'
     login_url = 'login'
 
+    def dispatch(self, request, *args, **kwargs):
+        objs = Todo.objects.all()
+        for obj in objs:
+            if obj.creator != self.request.user:
+                raise PermissionDenied
+            return super().dispatch(request, *args, **kwargs)
+
 
 class TodoDetailView(LoginRequiredMixin, DetailView):
     model = Todo
