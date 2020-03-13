@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<div style="margin: auto;">
+  <h1>Todos</h1>
+  <p>You don't have any todos yet create them below</p>
+  <p><a href="{% url 'todo_new' %}">+New</a></p>
+</div>
+{% endblock %}
