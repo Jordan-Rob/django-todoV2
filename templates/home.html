@@ -5,6 +5,7 @@
   <div>
     <p>Hi {{ user.username }}</p>
     <p><a href="{% url 'logout' %}">Log Out</a></p>
+    <p>View your Todos <a href="{% url 'todo_list' %}">here</a></p>
   </div>
   {% else %}
   <div>
