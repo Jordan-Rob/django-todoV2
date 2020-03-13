@@ -10,7 +10,7 @@ class Todo(models.Model):
     description = models.TextField(max_length=320)
     to_be_done = models.DateTimeField(null=False)
     date_posted = models.DateTimeField(auto_now_add=True)
-    creator = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

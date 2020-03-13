@@ -32,7 +32,7 @@ class TodoListView(LoginRequiredMixin, ListView):
     login_url = 'login'
 
     def dispatch(self, request, *args, **kwargs):
-        objs = Todo.objects.all()
+        objs = self.get_objects().all()
         for obj in objs:
             if obj.creator != self.request.user:
                 raise PermissionDenied
