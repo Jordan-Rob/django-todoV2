@@ -22,7 +22,7 @@ class TodoCreateView(LoginRequiredMixin, CreateView):
     login_url = 'login'
 
     def form_valid(self, form):
-        form.instance.creator = self.request.user
+        form.instance.user = self.request.user
         return super().form_valid(form)
 
 
