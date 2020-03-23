@@ -31,12 +31,16 @@ class TodoListView(LoginRequiredMixin, ListView):
     template_name = 'todo_list.html'
     login_url = 'login'
 
-    def dispatch(self, request, *args, **kwargs):
-        objs = self.get_objects().all()
-        for obj in objs:
-            if obj.creator != self.request.user:
+    def get_queryset(self):
+        qs = Todo.objects.filter(user=self.request.user)
+        return qs
+
+    """def dispatch(self, request, *args, **kwargs):
+        objects = self.objects.filter(user=self.request.user)
+        for obj in objects:
+            if obj.user != self.request.user:
                 raise PermissionDenied
-            return super().dispatch(request, *args, **kwargs)
+            return super().dispatch(request, *args, **kwargs)"""
 
 
 class TodoDetailView(LoginRequiredMixin, DetailView):
