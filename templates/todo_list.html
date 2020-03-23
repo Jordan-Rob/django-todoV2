@@ -1,13 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <div style="margin: auto;">
   <h1>Todos</h1>
-  {% for todo in object_list %}
+  {% if not object_list %}
   <div>
-    <ul>
-      <li><a href="{% url 'todo_detail' todo.pk %}">{{ todo.title }}</a></li>
-    </ul>
+    <p>looks like you dont have any todos yet</p>
+    <p>create some <a href="{% url 'todo_new' %}">here</a></p>
   </div>
-  {% endfor %}
-  <p><a href="{% url 'todo_new' %}">+New</a></p>
+  {% endif %}
+  <p><a href="{% url 'home' %}">Back home</a></p>
 </div>
 {% endblock %}
