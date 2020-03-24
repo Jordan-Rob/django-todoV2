@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'tailwind',
     'todos.apps.TodosConfig',
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
