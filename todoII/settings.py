@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'tailwind',
+    'theme.apps.ThemeConfig',
     'todos.apps.TodosConfig',
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
@@ -127,3 +128,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
 STATIC_URL = '/static/'
+
+# tailwind integration
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
+TAILWIND_APP_NAME = 'theme'
