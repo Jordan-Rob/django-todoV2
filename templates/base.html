@@ -12,19 +12,29 @@
       type="text/css"
     />
   </head>
-  <body class=" bg-white">
-    <nav class="relative bg-gray-300 border-gray-300 text-purple-600 font-semibold">
-      <div>
-        <div></div>
-
-        {% if user.is_autenticated %}
+  <body class=" bg-white font-sans">
+    <nav class="relative bg-gray-300 border-gray-300 
+     border-b-2  font-bold py-4">
+      <div class=" container mx-auto flex justify-between">
         <div>
-          <p>blalal</p>
+          <h1 class=" text-2xl text-purple-600">
+            <a href="{% url 'home' %}">TodoV2</a>
+          </h1>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class=" flex">
+          <a class=" px-2 pt-2 text-purple-600" >{{ user.username }} |</a>
+          <a class="  pt-2 text-purple-600" href="{% url 'logout' %}">LogOut</a>
         </div>
         {% else %}
-        <ul>
-          <li><a href="http://">Login</a></li>
-          <li><a href="http://">SignUp</a></li>
+        <ul class=" flex">
+          <li class=" px-2 pt-2 text-gray-600 hover:text-purple-600">
+            <a href="{% url 'login' %}">Login</a>
+          </li>
+          <li class=" px-2 pt-2 text-gray-600 hover:text-purple-600">
+            <a href="{% url 'signup' %}">SignUp</a>
+          </li>
         </ul>
         {% endif %}
       </div>
