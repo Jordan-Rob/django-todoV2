@@ -1,11 +1,15 @@
 {% extends 'base.html' %} {% block content %}
 <div style="margin:auto;">
-  <h1>Home Page</h1>
+  
   {% if user.is_authenticated %}
-  <div>
-    <p>Hi {{ user.username }}</p>
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
-    <p>View your Todos <a href="{% url 'todo_list' %}">here</a></p>
+  <div class=" max-w-xl mx-auto my-10 bg-gray-200 py-4 px-8 
+  rounded-lg shadow-xl">
+    <div class=" pl-20 py-8 text-2xl text-gray-600">
+      <h1>Home Page</h1>
+      <p>Welcome back <span class=" font-bold text-purple-600"> {{ user.username }} </span></p>
+      <p><a class=" hover:text-purple-600 font-bold" href="{% url 'logout' %}">LogOut</a></p>
+      <p>View your Todos <a class=" hover:text-purple-600 font-bold" href="{% url 'todo_list' %}">here</a></p>
+    </div>
   </div>
   {% else %}
   <div>
