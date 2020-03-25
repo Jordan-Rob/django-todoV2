@@ -2,7 +2,7 @@
 <div style="margin:auto;">
   
   {% if user.is_authenticated %}
-  <div class=" max-w-xl mx-auto my-10 bg-gray-200 py-4 px-8 
+  <div class=" max-w-xl mx-auto my-16 bg-gray-200 py-4 px-8 
   rounded-lg shadow-xl">
     <div class=" pl-20 py-8 text-2xl text-gray-600">
       <h1>Home Page</h1>
@@ -11,7 +11,8 @@
     </div>
   </div>
   {% else %}
-  <div>
+  <div class=" max-w-xl mx-auto my-16 bg-gray-200 py-4 px-8 
+  rounded-lg shadow-xl">
     <p>You aren't logged in log in <a href="{% url 'login' %}">Log In</a></p>
     <p>Don't have an account? <a href="{% url 'signup' %}">Sign Up</a></p>
   </div>
