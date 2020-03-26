@@ -31,11 +31,19 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
+    # 3rd party
     'tailwind',
     'theme.apps.ThemeConfig',
+
+
+    # apps
     'todos.apps.TodosConfig',
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+
+    'crispy_forms',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,3 +140,4 @@ STATIC_URL = '/static/'
 # tailwind integration
 NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 TAILWIND_APP_NAME = 'theme'
+
