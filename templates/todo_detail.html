@@ -1,13 +1,22 @@
 {% extends 'base.html' %} {% block content %}
-<div style="margin:auto;">
-  <h1>{{todo.title }}</h1>
-  <p>{{ todo.description }}</p>
-  <p>to be done on {{ todo.to_be_done }}</p>
-  <p>posted on {{ todo.date_posted }}</p>
-  <p>
-    <a href="{% url 'todo_edit' todo.pk %}">Edit</a> |
-    <a href="{% url 'todo_delete' todo.pk %}">Delete</a>
-  </p>
-  <p><a href="{% url 'todo_list' %}">Back to Todos</a></p>
+<div class=" max-w-xl mx-auto my-10 bg-gray-200 py-4 px-8 
+font-sans rounded-lg shadow-xl text-gray-600">
+  <div class=" text-center mb-5">
+    <h1 class=" text-purple-500  font-semibold 
+    text-2xl mb-4">{{todo.title }}</h1>
+    <p>{{ todo.description }}</p>
+    <p>to be done on {{ todo.to_be_done }}</p>
+    <p class=" mb-2">posted on {{ todo.date_posted }}</p>
+    <p class=" my-3">
+      <a class=" text-purple-600 font-semibold text-xl 
+      hover:font-bold" href="{% url 'todo_edit' todo.pk %}">Edit</a> |
+      <a class=" text-red-500 font-semibold 
+      text-xl hover:font-bold" 
+      href="{% url 'todo_delete' todo.pk %}">Delete</a>
+    </p>
+    <p><a class=" bg-purple-600 px-6 rounded-lg  py-2 text-white 
+      font-bold hover:bg-indigo-600 shadow-md" 
+      href="{% url 'todo_list' %}">Back to Todos</a></p>
+  </div>
 </div>
 {% endblock %}
