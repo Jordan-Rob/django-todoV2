@@ -1,10 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 
-<div style="margin:auto">
-  <h1>LogIn</h1>
-  <form action="" method="post">
-    {% csrf_token %} {{ form.as_p }}
-    <button type="submit">Log In</button>
-  </form>
+<div class=" max-w-xl mx-auto my-10 bg-gray-200 py-4 px-8 
+font-sans rounded-lg shadow-xl">
+  <div class=" items-center">
+    <h1 class=" text-gray-600 font-semibold text-center text-2xl">LogIn</h1>
+    <form class=" w-34 pt-6 px-16 text-gray-700" action="" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button class=" ml-32 bg-purple-600 px-8 py-2 mt-8 text-white rounded-lg shadow-md" type="submit">Log In</button>
+    </form>
+  </div>
 </div>
 {% endblock %}
