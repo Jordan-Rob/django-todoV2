@@ -1,20 +1,24 @@
 {% extends 'base.html' %} {% block content %}
-<div style="margin: auto;">
-  <h1>Todos</h1>
-  {% if not object_list %}
-  <div>
-    <p>looks like you dont have any todos yet</p>
-    <p>create some <a href="{% url 'todo_new' %}">here</a></p>
+<div class=" max-w-xl mx-auto my-10 bg-gray-200 py-4 px-8 
+font-sans rounded-lg shadow-xl text-gray-600">
+  <div class="  ml-24">
+    <h1 class=" text-purple-500  font-semibold 
+     text-2xl mb-4">Todos</h1>
+    {% if not object_list %}
+    <div class=" mb-4">
+      <p>looks like you dont have any todos yet</p>
+      <p>create some <a href="{% url 'todo_new' %}">here</a></p>
+    </div>
+    {% else %} {% for todo in object_list %}
+    <div class=" mb-4">
+      <ul>
+        <li><a class=" hover:font-bold" href="{% url 'todo_detail' todo.pk %}">{{ todo.id }}-{{ todo.title }}</a></li>
+      </ul>
+    </div>
+    {% endfor %}
+    <p class=" mb-2"><a class=" text-purple-600" href="{% url 'todo_new' %}">+New</a></p>
+    {% endif %}
+    <p><a class=" bg-purple-600 text-gray-700 font-bold hover:text-indigo-600" href="{% url 'home' %}">Back home</a></p>
   </div>
-  {% else %} {% for todo in object_list %}
-  <div>
-    <ul>
-      <li><a href="{% url 'todo_detail' todo.pk %}">{{ todo.title }}</a></li>
-    </ul>
-  </div>
-  {% endfor %}
-  <p><a href="{% url 'todo_new' %}">+New</a></p>
-  {% endif %}
-  <p><a href="{% url 'home' %}">Back home</a></p>
 </div>
 {% endblock %}
