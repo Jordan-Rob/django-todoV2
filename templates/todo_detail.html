@@ -7,14 +7,14 @@ font-sans rounded-lg shadow-xl text-gray-600">
     <p>{{ todo.description }}</p>
     <p>to be done on {{ todo.to_be_done }}</p>
     <p class=" mb-2">posted on {{ todo.date_posted }}</p>
-    <p class=" my-3">
+    <p class=" m">
       <a class=" text-purple-600 font-semibold text-xl 
       hover:font-bold" href="{% url 'todo_edit' todo.pk %}">Edit</a> |
       <a class=" text-red-500 font-semibold 
       text-xl hover:font-bold" 
       href="{% url 'todo_delete' todo.pk %}">Delete</a>
     </p>
-    <p><a class=" bg-purple-600 px-6 rounded-lg  py-2 text-white 
+    <p class="mt-6"><a class=" bg-purple-600 px-6 rounded-lg  py-2 text-white 
       font-bold hover:bg-indigo-600 shadow-md" 
       href="{% url 'todo_list' %}">Back to Todos</a></p>
   </div>
