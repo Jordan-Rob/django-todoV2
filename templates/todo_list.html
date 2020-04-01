@@ -7,7 +7,7 @@ font-sans rounded-lg shadow-xl text-gray-600">
     {% if not object_list %}
     <div class=" mb-4">
       <p>looks like you dont have any todos yet</p>
-      <p>create some <a href="{% url 'todo_new' %}">here</a></p>
+      <p>create some <a class=" text-indigo-600 font-semibold hover:font-bold" href="{% url 'todo_new' %}">here</a></p>
     </div>
     {% else %} {% for todo in object_list %}
     <div class=" mb-4">
