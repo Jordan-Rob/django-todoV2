@@ -9,6 +9,8 @@ verify_ssl = true
 django = "*"
 django-tailwind = "*"
 django-crispy-forms = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"
