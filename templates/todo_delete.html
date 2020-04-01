@@ -1,14 +1,20 @@
 {% extends 'base.html' %} {% block content %}
-<div>
-  <h1>Delete</h1>
-  <form action="" method="post">
-    {% csrf_token %}
-    <p>Are you sure you want to delete {{ todo.title }}</p>
-    <p>
-      <button type="submit">Delete</button> |
-      <button><a href="{% url 'todo_list' %}">Cancel</a></button>
-    </p>
-  </form>
+<div class=" max-w-xl mx-auto my-10 bg-gray-200 py-4 px-8 
+font-sans rounded-lg shadow-xl text-gray-600">
+  <div class=" text-center mb-5">
+    <h1 class=" text-red-500  font-semibold 
+    text-2xl mb-4">Delete</h1>
+    <form action="" method="post">
+      {% csrf_token %}
+      <p>Are you sure you want to delete <span class=" text-gray-600 font-semibold"> {{ todo.title }}</span></p>
+      <p>
+        <button class=" bg-red-400 px-6 rounded-lg  py-2 text-white 
+        font-bold hover:bg-red-600 shadow-md" type="submit">Delete</button> |
+        <a class=" bg-purple-600 px-6 rounded-lg  py-2 text-white 
+        font-bold hover:bg-indigo-600 shadow-md" href="{% url 'todo_list' %}">Cancel</a>
+      </p>
+    </form>
+  </div>
 </div>
 
 {% endblock %}
